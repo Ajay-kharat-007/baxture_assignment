@@ -1,0 +1,41 @@
+<div mat-dialog-title>
+    <h1>{{data?"User Update Form" : "User Registration Form"}}</h1>
+</div>
+<form [formGroup]="hotelForm" (ngSubmit)="hotelRegistr()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>ID</mat-label>
+                <input matInput placeholder="Ex. 21" formControlName="id">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Ex. Ajay" formControlName="firstName">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name </mat-label>
+                <input matInput type="text" placeholder="Ex. Kharat" formControlName="lastName">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ex. kharatajay314@gmail.com" formControlName="email">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Ex. Sector 3, Navi Mumbai - 400708" formControlName="address">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" (click)="closeDialog()">Cancel</button>
+        <button mat-raised-button color="primary">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>
