@@ -7,17 +7,20 @@ import { UserApiDataComponent } from './components/user-api-data/user-api-data.c
 
 const routes: Routes = [
   {
-    path: "", component: FeaturedComponent, children: [
+    path: '',
+    component: FeaturedComponent,
+    children: [
       { path: '', redirectTo: '/user-list', pathMatch: 'full' },
       { path: 'user-form', component: UserFormComponent },
       { path: 'user-list', component: UserListComponent },
-      { path: 'user-api-list', component: UserApiDataComponent }
-    ]
-  }
+      { path: 'user-api-list', component: UserApiDataComponent },
+      { path: '**', redirectTo: '/user-list' },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class FeaturedRoutingModule { }
+export class FeaturedRoutingModule {}

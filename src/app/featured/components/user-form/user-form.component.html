@@ -7,30 +7,45 @@
             <mat-form-field appearance="outline">
                 <mat-label>ID</mat-label>
                 <input matInput placeholder="Ex. 21" formControlName="id">
+                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                    ID is required
+                  </mat-error>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>First Name</mat-label>
                 <input matInput placeholder="Ex. Ajay" formControlName="firstName">
+                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                    First Name is required
+                  </mat-error>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Last Name </mat-label>
                 <input matInput type="text" placeholder="Ex. Kharat" formControlName="lastName">
+                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                    Last Name is required
+                  </mat-error>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" placeholder="Ex. kharatajay314@gmail.com" formControlName="email">
+                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                    Email is required
+                  </mat-error>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Address</mat-label>
                 <input matInput placeholder="Ex. Sector 3, Navi Mumbai - 400708" formControlName="address">
+                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                    Address is required
+                  </mat-error>
             </mat-form-field>
         </div>
     </div>
