@@ -7,7 +7,7 @@
                 <mat-label>Filter</mat-label>
                 <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Taj" #input>
             </mat-form-field>
-            <button mat-raised-button style="margin: 0 10px;" (click)="hotelRegister()">Add User</button>
+            <button mat-raised-button style="margin: 0 10px;" (click)="userRegister()">Add User</button>
 
             <div class="table-container">
                 <table mat-table [dataSource]="dataSource" matSort>
