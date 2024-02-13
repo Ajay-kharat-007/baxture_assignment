@@ -1,13 +1,13 @@
 <div mat-dialog-title>
     <h1>{{data?"User Update Form" : "User Registration Form"}}</h1>
 </div>
-<form [formGroup]="hotelForm" (ngSubmit)="hotelRegistr()">
+<form [formGroup]="userForm" (ngSubmit)="userRegistr()">
     <div mat-dialog-content class="content">
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>ID</mat-label>
                 <input matInput placeholder="Ex. 21" formControlName="id">
-                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                <mat-error *ngIf="userForm.get('id')?.invalid && (userForm.get('id')?.dirty || userForm.get('id')?.touched)">
                     ID is required
                   </mat-error>
             </mat-form-field>
@@ -16,7 +16,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>First Name</mat-label>
                 <input matInput placeholder="Ex. Ajay" formControlName="firstName">
-                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                <mat-error *ngIf="userForm.get('id')?.invalid && (userForm.get('id')?.dirty || userForm.get('id')?.touched)">
                     First Name is required
                   </mat-error>
             </mat-form-field>
@@ -25,7 +25,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>Last Name </mat-label>
                 <input matInput type="text" placeholder="Ex. Kharat" formControlName="lastName">
-                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                <mat-error *ngIf="userForm.get('id')?.invalid && (userForm.get('id')?.dirty || userForm.get('id')?.touched)">
                     Last Name is required
                   </mat-error>
             </mat-form-field>
@@ -34,7 +34,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" placeholder="Ex. kharatajay314@gmail.com" formControlName="email">
-                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                <mat-error *ngIf="userForm.get('id')?.invalid && (userForm.get('id')?.dirty || userForm.get('id')?.touched)">
                     Email is required
                   </mat-error>
             </mat-form-field>
@@ -43,7 +43,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>Address</mat-label>
                 <input matInput placeholder="Ex. Sector 3, Navi Mumbai - 400708" formControlName="address">
-                <mat-error *ngIf="hotelForm.get('id')?.invalid && (hotelForm.get('id')?.dirty || hotelForm.get('id')?.touched)">
+                <mat-error *ngIf="userForm.get('id')?.invalid && (userForm.get('id')?.dirty || userForm.get('id')?.touched)">
                     Address is required
                   </mat-error>
             </mat-form-field>

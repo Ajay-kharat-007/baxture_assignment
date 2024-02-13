@@ -35,21 +35,21 @@ export class UserListComponent {
   ) { }
 
   ngOnInit(): void {
-    this.getHotelList();
+    this.getUserList();
   }
 
-  hotelRegister() {
+  userRegister() {
     const dialogRef = this.dialog.open(UserFormComponent)
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getHotelList();
+          this.getUserList();
         }
       }
     })
   }
 
-  getHotelList() {
+  getUserList() {
     this.service.getUsers().subscribe({
       next: (res: any) => {
         this.dataSource = new MatTableDataSource(res.data);
@@ -70,17 +70,17 @@ export class UserListComponent {
     }
   }
 
-  deleteHotel(id: number) {
+  deleteUser(id: number) {
     this.service.deleteUser(id).subscribe({
       next: (res: any) => {
         this.toastr.success("Hotel Deleted !!");
-        this.getHotelList();
+        this.getUserList();
       },
       error: console.log,
     })
   }
 
-  openHotelForm(data: any) {
+  openUserForm(data: any) {
     const dialogRef = this.dialog.open(UserFormComponent, {
       data,
     });
@@ -88,7 +88,7 @@ export class UserListComponent {
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-          this.getHotelList();
+          this.getUserList();
         }
       }
     })

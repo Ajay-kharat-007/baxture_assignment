@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./user-form.component.scss'],
 })
 export class UserFormComponent {
-  hotelForm: FormGroup;
+  userForm: FormGroup;
 
   constructor(
     private builder: FormBuilder,
@@ -19,7 +19,7 @@ export class UserFormComponent {
     private dialog: MatDialogRef<UserFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.hotelForm = this.builder.group({
+    this.userForm = this.builder.group({
       id: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -29,15 +29,15 @@ export class UserFormComponent {
   }
 
   ngOnInit(): void {
-    this.hotelForm.patchValue(this.data);
+    this.userForm.patchValue(this.data);
   }
 
-  hotelRegistr() {
-    if (this.hotelForm.valid) {
+  userRegistr() {
+    if (this.userForm.valid) {
       if (this.data) {
-        this.service.updateUser(this.data._id, this.hotelForm.value).subscribe({
+        this.service.updateUser(this.data._id, this.userForm.value).subscribe({
           next: (val: any) => {
-            this.toastr.success('Hotel Detail Updated Successfully !!');
+            this.toastr.success('User Details Updated Successfully !!');
             this.dialog.close(true);
           },
           error: (err: any) => {
@@ -45,11 +45,11 @@ export class UserFormComponent {
           },
         });
       } else {
-        console.log(this.hotelForm.value);
-        this.service.addUser(this.hotelForm.value).subscribe({
+        console.log(this.userForm.value);
+        this.service.addUser(this.userForm.value).subscribe({
           next: (val: any) => {
             this.toastr.success(
-              'Hotel Registration Successfull',
+              'User Registration Successfull',
               'Congratulations!!'
             );
             this.dialog.close(true);
